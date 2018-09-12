@@ -69,7 +69,7 @@ func SortSemver(r io.Reader, w io.Writer) error {
 }
 
 func main() {
-	if err := SortSemver(os.Stdin, os.Stderr); err != nil {
+	if err := SortSemver(os.Stdin, os.Stdout); err != nil {
 		log.Fatalf("%v\n", err)
 	}
 }
