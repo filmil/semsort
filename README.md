@@ -8,7 +8,7 @@ bash shell scripts.
 
 ```console
 go get github.com/filmil/semsort
-go install github.com/filmil/semsort
+go install github.com/filmil/semsort/...
 ```
 
 # Testing
