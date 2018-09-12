@@ -4,19 +4,6 @@ A program that sorts semantic versions given on the `os.Stdin` and prints them
 out, one line at a time, to `os.Stdout`. Comes in handy for use from inside
 bash shell scripts.
 
-# Installation
-
-```console
-go get github.com/filmil/semsort
-go install github.com/filmil/semsort/...
-```
-
-# Testing
-
-```console
-go test github.com/filmil/semsort/...
-```
-
 # Usage
 
 ```console
@@ -49,4 +36,16 @@ EOF
 0.1.1
 ```
 
+# Installation
+
+```console
+go get github.com/filmil/semsort
+go install github.com/filmil/semsort/...
+```
+
+# Testing
+
+```console
+go test github.com/filmil/semsort/...
+```
 
