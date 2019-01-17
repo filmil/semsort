@@ -29,11 +29,42 @@ $ cat <<EOF | semsort
 0.1.0-alpha
 0.1.0-alpha.2
 EOF
-
 0.1.0-alpha
 0.1.0-alpha.2
 0.1.0
 0.1.1
+```
+
+The non-semver strings are silently dropped from the output.
+
+```console
+$ cat <<EOF | semsort
+eenie
+0.1.1
+meenie
+0.1.0
+minie
+0.1.0-alpha
+moe
+0.1.0-alpha.2
+EOF
+0.1.0-alpha
+0.1.0-alpha.2
+0.1.0
+0.1.1
+```
+
+Note that it means that also `0.11` is not well-formed, since it is missing
+the patch level.
+
+```console
+$ cat <<EOF | semsort
+eenie
+0.11
+meenie
+0.12.0
+EOF
+0.12.0
 ```
 
 # Installation
