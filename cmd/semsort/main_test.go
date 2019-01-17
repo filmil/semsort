@@ -69,6 +69,23 @@ func TestSort(t *testing.T) {
 				"v1.2.3",
 				""}, "\n"),
 		},
+		{
+			// Same as above, but also includes nonsense strings that can't
+			// be parsed as semver.
+			input: strings.Join([]string{
+				"v1.2.3",
+				"vinnie",
+				"v1.2.3-rc.1",
+				"the",
+				"1.2.3-rc.0",
+				"pooh",
+			}, " "),
+			output: strings.Join([]string{
+				"1.2.3-rc.0",
+				"v1.2.3-rc.1",
+				"v1.2.3",
+				""}, "\n"),
+		},
 	}
 	for _, test := range tests {
 		var b strings.Builder

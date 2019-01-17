@@ -57,7 +57,8 @@ func SortSemver(r io.Reader, w io.Writer) error {
 		var err error
 		v.version, err = semver.Make(s)
 		if err != nil {
-			return fmt.Errorf("can not parse as semver: %q: %v", v.raw, err)
+			// Skip a string that can not be parsed as semver.
+			continue
 		}
 		sv = append(sv, v)
 	}
